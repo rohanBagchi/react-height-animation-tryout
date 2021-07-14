@@ -1,0 +1,46 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.card {
+  width: 500px;
+  border: 1px solid #d8d8d8;
+  padding: 10px;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.expanded-content-enter {
+  height: 0;
+}
+.expanded-content-enter-active {
+  height: auto;
+  transition: height 200ms;
+}
+.expanded-content-exit {
+  height: auto;
+}
+.expanded-content-exit-active {
+  height: 0;
+  transition: height 200ms;
+}
+
+.collapsed-content-enter {
+  height: 0;
+}
+.collapsed-content-enter-active {
+  height: auto;
+  transition: height 200ms;
+}
+.collapsed-content-exit {
+  height: auto;
+}
+.collapsed-content-exit-active {
+  height: 0;
+  transition: height 200ms;
+}
