@@ -8,39 +8,33 @@
 .card {
   width: 500px;
   border: 1px solid #d8d8d8;
+  overflow: hidden;
   padding: 10px;
 }
 
-.content {
-  margin-bottom: 20px;
+.base-style {
+  max-height: 50px;
 }
 
-.expanded-content-enter {
-  height: 0;
+.content-enter {
+  max-height: 50px;
 }
-.expanded-content-enter-active {
-  height: auto;
-  transition: height 200ms;
-}
-.expanded-content-exit {
-  height: auto;
-}
-.expanded-content-exit-active {
-  height: 0;
-  transition: height 200ms;
+.content-enter-active {
+  max-height: 500px;
+  transition: max-height 400ms ease-in;
 }
 
-.collapsed-content-enter {
-  height: 0;
+.content-enter-done {
+  max-height: 500px;
 }
-.collapsed-content-enter-active {
-  height: auto;
-  transition: height 200ms;
+
+.content-exit {
+  max-height: 500px;
 }
-.collapsed-content-exit {
-  height: auto;
+.content-exit-active {
+  max-height: 50px;
+  transition: max-height 200ms;
 }
-.collapsed-content-exit-active {
-  height: 0;
-  transition: height 200ms;
+.content-exit-done {
+  max-height: 50px;
 }
