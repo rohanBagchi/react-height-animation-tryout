@@ -1,3 +1,31 @@
-.ContentSwitching--base-style {
-  max-height: 72px;
+.base {
+  height: 120px;
+  overflow: hidden;
+}
+
+.content-switching-enter {
+  height: 120px;
+  overflow: hidden;
+}
+
+.content-switching-enter-active {
+  height: 300px;
+  transition: height 200ms ease;
+}
+
+.content-switching-enter-done {
+  height: 300px;
+}
+
+.content-switching-exit {
+  height: 300px;
+}
+.content-switching-exit-active {
+  height: 120px;
+  transition: height 200ms ease;
+  overflow: hidden;
+}
+
+.content-switching-exit-done {
+  height: 120px;
 }

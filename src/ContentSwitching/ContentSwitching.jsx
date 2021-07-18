@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import './style.css'
-import AnimateHeight from 'react-animate-height';
 
 /**
  * Expand animation
@@ -46,22 +45,29 @@ const ExpandedContent = (props) => {
 
 export const ContentSwitching = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   return (
     <div>
       <div className="card">
-        <AnimateHeight
-          duration={500}
-          height={isCollapsed ? 120 : 300}
-          delay={100}
+        <CSSTransition
+          in={isAnimating}
+          timeout={200}
+          classNames="content-switching"
+          onEntering={() => {
+            setIsCollapsed(false)
+          }}
+          onExited={() => {
+            setIsCollapsed(true)
+          }}
         >
-          {isCollapsed && <CollapsedContent />}
-          {!isCollapsed && <ExpandedContent />}
-
-          {/* <ExpandedContent /> */}
-        </AnimateHeight>
+          <div className="base">
+            {isCollapsed && <CollapsedContent />}
+            {!isCollapsed && <ExpandedContent />}
+          </div>
+        </CSSTransition>
       </div >
-      <button onClick={() => setIsCollapsed(prev => !prev)} style={{ display: 'block' }}>
+      <button onClick={() => setIsAnimating(prev => !prev)} style={{ display: 'block' }}>
         {isCollapsed ? 'Show' : 'Hide'}
       </button>
     </div>
