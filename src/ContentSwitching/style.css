@@ -1,28 +1,39 @@
-.ContentSwitching--base-style {
-  max-height: 72px;
-  background-color: blue;
-  transition: max-height 400ms ease-in;
+.base {
+  height: 120px;
+  overflow: hidden;
 }
 
-.content-enter {
-  max-height: 72px;
-}
-.content-enter-active {
-  max-height: 500px;
-  transition: max-height 400ms ease-in;
+.collapsed {
+  background-color: red;
 }
 
-.content-enter-done {
-  max-height: 500px;
+.expanded {
+  background-color: green;
 }
 
-.content-exit {
-  max-height: 500px;
+.content-switching-enter {
+  height: 120px;
+  overflow: hidden;
 }
-.content-exit-active {
-  max-height: 72px;
-  transition: max-height 400ms;
+
+.content-switching-enter-active {
+  height: 300px;
+  transition: height 200ms ease;
 }
-.content-exit-done {
-  max-height: 72px;
+
+.content-switching-enter-done {
+  height: 300px;
+}
+
+.content-switching-exit {
+  height: 300px;
+}
+.content-switching-exit-active {
+  height: 120px;
+  transition: height 200ms ease;
+  overflow: hidden;
+}
+
+.content-switching-exit-done {
+  height: 120px;
 }
