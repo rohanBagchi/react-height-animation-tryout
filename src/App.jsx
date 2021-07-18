@@ -5,11 +5,27 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch
 } from "react-router-dom";
 import './App.css'
 import { TransitionGroup } from './TransitionGroup';
 import { ContentSwitching } from './ContentSwitching/ContentSwitching';
+
+function OldSchoolMenuLink({ children, to, activeOnlyWhenExact }) {
+  let match = useRouteMatch({
+    path: to,
+    exact: activeOnlyWhenExact
+  });
+
+  return (
+    <div className={match ? "active" : ""}>
+      {match && "> "}
+      <Link to={to}>{children}</Link>
+    </div>
+  );
+}
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,13 +35,13 @@ function App() {
       <div>
         <ul>
           <li>
-            <Link to="/">Basic CSS Transition</Link>
+            <OldSchoolMenuLink to="/" activeOnlyWhenExact={true}>Content Switch</OldSchoolMenuLink>
           </li>
           <li>
-            <Link to="/switching">Content Switch</Link>
+            <OldSchoolMenuLink to="/basic">Basic CSS Transition</OldSchoolMenuLink>
           </li>
           <li>
-            <Link to="/transition-group">Transition Group</Link>
+            <OldSchoolMenuLink to="/transition-group">Transition Group</OldSchoolMenuLink>
           </li>
         </ul>
 
@@ -33,10 +49,10 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Card />
-          </Route>
-          <Route exact path="/switching">
             <ContentSwitching />
+          </Route>
+          <Route exact path="/basic">
+            <Card />
           </Route>
           <Route path="/transition-group">
             <TransitionGroup />

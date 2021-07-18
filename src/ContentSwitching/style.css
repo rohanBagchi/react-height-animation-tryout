@@ -1,28 +1,3 @@
 .ContentSwitching--base-style {
   max-height: 72px;
-  background-color: blue;
-  transition: max-height 400ms ease-in;
-}
-
-.content-enter {
-  max-height: 72px;
-}
-.content-enter-active {
-  max-height: 500px;
-  transition: max-height 400ms ease-in;
-}
-
-.content-enter-done {
-  max-height: 500px;
-}
-
-.content-exit {
-  max-height: 500px;
-}
-.content-exit-active {
-  max-height: 72px;
-  transition: max-height 400ms;
-}
-.content-exit-done {
-  max-height: 72px;
 }
