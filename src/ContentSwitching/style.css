@@ -3,6 +3,14 @@
   overflow: hidden;
 }
 
+.collapsed {
+  background-color: red;
+}
+
+.expanded {
+  background-color: green;
+}
+
 .content-switching-enter {
   height: 120px;
   overflow: hidden;
