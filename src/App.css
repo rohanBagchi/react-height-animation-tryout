@@ -6,8 +6,16 @@
 }
 
 .card {
-  width: 500px;
+  max-width: 500px;
   border: 1px solid #d8d8d8;
   overflow: hidden;
   padding: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #004285;
+  border: 0;
+  color: #fff;
+  font-weight: 500;
 }

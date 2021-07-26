@@ -67,7 +67,7 @@ export const ContentSwitching = () => {
           </div>
         </CSSTransition>
       </div >
-      <button onClick={() => setIsAnimating(prev => !prev)} style={{ display: 'block' }}>
+      <button onClick={() => setIsAnimating(prev => !prev)} style={{ display: 'block', marginTop: '10px' }}>
         {isCollapsed ? 'Show' : 'Hide'}
       </button>
     </div>
